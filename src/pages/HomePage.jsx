@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import { MyContext } from '../App.jsx'
 import { Navigate } from 'react-router-dom';
+import Layout from '../components/layout/Layout';
 
 const HomePage = () => {
     const { session, supabase } = useContext(MyContext);
@@ -30,11 +31,13 @@ const HomePage = () => {
     return (
         <div>
             {session ? (
-                <div>
-                    <h1>Home page for user {session.user.email}</h1>
-                    <button onClick={() => singOut()}>Sing Out</button>
-                    <button onClick={() => getEvents()}>Get Events</button>
-                </div>
+                <Layout>
+                    <div>
+                        <h1>Home page for user {session.user.email}</h1>
+                        <button onClick={() => singOut()}>Sing Out</button>
+                        <button onClick={() => getEvents()}>Get Events</button>
+                    </div>
+                </Layout>
             )
             :
             (

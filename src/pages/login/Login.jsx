@@ -2,7 +2,6 @@ import React, {useContext} from 'react';
 import { MyContext } from '../../App';
 import googlLogo from '../../assets/google.png';
 import globe from '../../assets/globe.png';
-import styled from 'styled-components'
 import { MainContainer, SecondContainer, Logo, FormContainer, Globe, LButton } from './styleslogin.jsx';
 
 
