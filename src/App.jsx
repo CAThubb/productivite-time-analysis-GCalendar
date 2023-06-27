@@ -36,7 +36,7 @@ function App() {
     await supabase.auth.SingOut();
   };
 
-  console.log(session);
+  //console.log(session);
   return (
     <>
     <MyContext.Provider value={{session, supabase}}>

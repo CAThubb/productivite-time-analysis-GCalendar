@@ -1,5 +1,11 @@
 import React, {useContext} from 'react';
 import { MyContext } from '../../App';
+import googlLogo from '../../assets/google.png';
+import globe from '../../assets/globe.png';
+import styled from 'styled-components'
+import { MainContainer, SecondContainer, Logo, FormContainer, Globe, LButton } from './styleslogin.jsx';
+
+
 
 const Login = () => {
     const { session, supabase } = useContext(MyContext);
@@ -30,11 +36,16 @@ const Login = () => {
     console.log(session);
 
     return (
-        <div>
-            <h1>Sing in with Google</h1>
-            <button onClick={() => googleSIgnIn()}>Sing In</button>
-            <button onClick={() => singOut()}>Sing Out</button>
-        </div>
+        <MainContainer>
+            <Globe src={globe} alt="" />
+            <SecondContainer>
+                <FormContainer>
+                    <Logo src={googlLogo} alt=""/> Sing In With Google
+                </FormContainer>
+                <LButton onClick={() => googleSIgnIn()}>Sing In</LButton>
+                <LButton onClick={() => singOut()}>Log Out</LButton>
+            </SecondContainer>
+        </MainContainer>
     );
 };
 
